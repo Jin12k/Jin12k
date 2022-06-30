@@ -8,7 +8,7 @@ import {
   Text,
   SafeAreaView
 } from 'react-native';
- 
+
 const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -43,27 +43,31 @@ const HomeScreen = ({ navigation }) => {
             <Text>Open Details Screen</Text>
           </TouchableOpacity>
         </View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          React Native Bottom Navigation
-        </Text>
-        <Text
-          style={{
-            fontSize: 16,
-            textAlign: 'center',
-            color: 'grey'
-          }}>
-          www.aboutreact.com
-        </Text>
+        <TouchableOpacity onPress={
+              () => navigation.navigate('Api')
+            }>
+          <Text
+            style={{
+              fontSize: 18,
+              textAlign: 'center',
+              color: 'grey'
+            }}>
+            React Native Bottom Navigation
+          </Text>
+          <Text
+            style={{
+              fontSize: 16,
+              textAlign: 'center',
+              color: 'grey'
+            }}>
+            www.aboutreact.com
+          </Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 }
- 
+
 const styles = StyleSheet.create({
   button: {
     alignItems: 'center',

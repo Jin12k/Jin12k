@@ -8,7 +8,7 @@ import {
   Text,
   SafeAreaView
 } from 'react-native';
- 
+
 const SettingsScreen = ({ route, navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>

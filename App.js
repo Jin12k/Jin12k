@@ -22,6 +22,7 @@ import HomeScreen from './pages/HomeScreen';
 import DetailsScreen from './pages/DetailsScreen';
 import ProfileScreen from './pages/ProfileScreen';
 import SettingsScreen from './pages/SettingsScreen';
+import Api from './pages/Api'
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +32,7 @@ function HomeStack() {
         <Stack.Navigator
             initialRouteName="Home"
             screenOptions={{
+                headerShown: false,
                 headerStyle: { backgroundColor: '#42f44b' },
                 headerTintColor: '#fff',
                 headerTitleStyle: { fontWeight: 'bold' }
@@ -43,6 +45,10 @@ function HomeStack() {
                 name="Details"
                 component={DetailsScreen}
                 options={{ title: 'Details Page' }} />
+            <Stack.Screen
+                name="Api"
+                component={Api}
+                options={{ title: 'Api Screen' }} />
         </Stack.Navigator>
     );
 }
@@ -52,6 +58,7 @@ function SettingsStack() {
         <Stack.Navigator
             initialRouteName="Settings"
             screenOptions={{
+                headerShown: false,
                 headerStyle: { backgroundColor: '#42f44b' },
                 headerTintColor: '#fff',
                 headerTitleStyle: { fontWeight: 'bold' }
@@ -67,7 +74,11 @@ function SettingsStack() {
             <Stack.Screen
                 name="Profile"
                 component={ProfileScreen}
-                options={{ title: 'Profile Page' }} />
+                options={{ title: 'Hello' }} />
+            <Stack.Screen
+                name="red"
+                component={Api}
+                options={{ title: 'none' }} />
         </Stack.Navigator>
     );
 }
@@ -97,6 +108,7 @@ function App() {
                     name="SettingsStack"
                     component={SettingsStack}
                     options={{
+                        headerShown: false,
                         tabBarLabel: 'Settings',
                         tabBarIcon: ({ color, size }) => (
                             <MaterialCommunityIcons
@@ -111,6 +123,7 @@ function App() {
                     name="Details Stack"
                     component={DetailsScreen}
                     options={{
+                        headerShown: false,
                         tabBarLabel: 'Profile',
                         tabBarIcon: ({ color, size }) => (
                             <AntDesign
